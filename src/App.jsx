@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Base from './Base'
 
+import One from './One'
+
 import Audioplayer from '../spasjsx/apfiles/Audioplayer'
 import Memorygame from '../spasjsx/mgfiles/Memorygame'
 import Emojigame from '../spasjsx/egfiles/Emojigame'
@@ -18,6 +20,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Base />} >
+          <Route path='' element={<One />} />
           <Route path='audioplayer' element={<Audioplayer />} />
           <Route path='memorygame' element={<Memorygame />} />
           <Route path='emojigame' element={<Emojigame />} />
