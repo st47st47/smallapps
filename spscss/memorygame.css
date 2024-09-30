@@ -1,0 +1,121 @@
+.heromem {
+    width: 100vw;
+    height: 80vh;
+
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memscore {
+    text-align: center;
+    color: red;
+}
+
+.memgrid {
+    width: 90%;
+    height: 90%;
+
+    background-color: aquamarine;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/*  */
+
+.memcard {
+
+    margin: auto;
+
+    position: relative;
+
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headsface {
+    position: absolute;
+
+    width: 95%;
+    height: 95%;
+    background-color: wheat;
+
+    transition: 1s ease;
+
+    backface-visibility: hidden;
+}
+
+.headsface img {
+    width: 100%;
+    height: 100%;
+}
+
+.tailsface {
+    position: absolute;
+
+    width: 95%;
+    height: 95%;
+    background-color: burlywood;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 1s ease;
+
+    transform: rotateY(180deg);
+
+    backface-visibility: hidden;
+}
+
+.memcard:hover .headsface {
+    transform: rotateY(180deg);
+}
+
+.memcard:hover .tailsface {
+    transform: rotateY(0deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+@media screen and (max-width:600px) {
+    .heromem {
+        height: 100vh;
+    }
+}

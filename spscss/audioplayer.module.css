@@ -1,0 +1,128 @@
+.hero {
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background: linear-gradient(-45deg, #480643 0%, #212540 50%, #05435c 75%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cplayer {
+
+
+    background-color: black;
+
+
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+    width: 50%;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cplayer>h4 {
+
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cplayer>p {
+    color: #AAA;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.cplayerdetails .detailsimg {
+
+    position: relative;
+    width: fit-content;
+    margin: 50px auto;
+}
+
+.cplayerdetails .detailsimg img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), -6px -6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.cplayerdetails .detailstitle {
+    color: #eee;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.cplayerdetails .detailsartist {
+    color: #aaa;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.4);
+    text-align: center;
+
+}
+
+.cplayercontrols {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cplayercontrols .playbtn {
+    display: flex;
+    margin: 0 5%;
+    padding: 5%;
+    border-radius: 50%;
+    box-shadow:
+        4px 4px 10px rgba(0, 0, 0, 0.8),
+        -4px -4px 10px rgba(255, 255, 255, 0.4),
+        inset -4px -4px 10px rgba(0, 0, 0, 0.4),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.4);
+    border: none;
+    outline: none;
+    background-color: #001440;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cplayercontrols .skipbtn {
+
+    padding: 0px;
+    width: fit-content;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    border-radius: 20%;
+    align-items: center;
+    padding: 0px;
+}
+
+.cplayercontrols .skipbtn:hover,
+.cplayercontrols .playbtn:hover {
+    box-shadow:
+        0px 0px 20px green;
+}
+
+.cplayercontrols .playbtn:active,
+.cplayercontrols .skipbtn:active {
+    background: radial-gradient(green, black);
+}

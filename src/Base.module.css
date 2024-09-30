@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbtn {
+    display: none;
+
+    background-color: black;
+    color: red;
+    cursor: pointer;
+}
+
+.navbtn:hover {
+    transform: scale(1.1);
+}
+
+.navone {
+    width: 100vw;
+    min-height: 20vh;
+
+    background-color: black;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    transition: 0.26s ease-in-out;
+}
+
+.navone a {
+    color: red;
+    text-decoration: none;
+    font-size: 2em;
+
+}
+
+.navone a:hover {
+    color: white;
+    text-shadow: 10px 0px 10px red, -10px 0px 10px red, 0px 10px 10px red, 0px -10px 10px red;
+}
+
+/*  */
+
+@media screen and (max-width:600px) {
+
+    .navbtn {
+        display: block;
+    }
+
+
+    .navone {
+        position: absolute;
+        z-index: 4;
+        min-height: 100vh;
+
+        flex-direction: column;
+
+        opacity: 0.8;
+    }
+
+    .navbtn {
+        position: absolute;
+        z-index: 5;
+    }
+}
