@@ -4,6 +4,8 @@
     position: relative;
     color: white;
     background-color: black;
+
+    position: relative;
 }
 
 .dinoh1 {
@@ -51,9 +53,36 @@
     color: red;
 }
 
+/*  */
 
+.player {
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    top: 70vh;
+    padding: 0px;
 
+    overflow: hidden;
 
+    border: 1px solid whitesmoke
+}
+
+.player video {
+    position: absolute;
+    z-index: 3;
+}
+
+.closebtn {
+    position: absolute;
+    z-index: 4;
+    background-color: red;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: red;
+    background-color: black;
+}
 
 
 

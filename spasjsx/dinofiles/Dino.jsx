@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import vid from '../../spastatic/dinodemo.mp4'
 import styles from '../../spscss/dino.module.css'
 
 import dinorun from '../../spastatic/dinorun.gif'
@@ -57,6 +58,12 @@ const Dino = () => {
     }, [score])
 
 
+    useEffect(() => {
+        let x = setTimeout(() => {
+            document.getElementById('videomodal').showModal()
+        }, 2000)
+    }, [])
+
 
     if (bbottom >= window.innerHeight - 400) {
         directionref.current = 'down'
@@ -108,6 +115,11 @@ const Dino = () => {
             </div>
 
             <div className={styles.obstacle} style={{ right: obsRight, bottom: obsbottom }} ></div>
+
+            <dialog className={styles.player} id='videomodal'>
+                <button className={styles.closebtn} onClick={() => { document.getElementById('videomodal').close() }}>x</button>
+                <video src={vid} width='100%' controls></video>
+            </dialog>
 
         </div>
     )
