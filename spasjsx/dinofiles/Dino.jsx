@@ -54,7 +54,7 @@ const Dino = () => {
         window.addEventListener('keydown', dub)
 
         return () => { window.removeEventListener('keydown', dub) }
-    }, [])
+    }, [score])
 
 
 
