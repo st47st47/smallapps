@@ -30,27 +30,22 @@
 
 .obstacle {
     width: 40px;
-    height: 10px;
-    background-color: orange;
+    height: 40px;
+    background-color: red;
     position: absolute;
 }
 
 /*  */
 
-.land {
-    position: absolute;
-    width: 100vw;
-    height: 1%;
-    background-color: brown;
-    bottom: 200px;
+.restarth1 {
+    text-align: center;
+    transition: 0.2s linear;
+    cursor: pointer;
 }
 
-
-
-
-
-
-
+.restarth1:hover {
+    color: chartreuse;
+}
 
 
 
