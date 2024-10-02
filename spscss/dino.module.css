@@ -38,13 +38,17 @@
 /*  */
 
 .restarth1 {
+    background-color: royalblue;
     text-align: center;
     transition: 0.2s linear;
     cursor: pointer;
+
+    width: 50%;
+    margin: auto;
 }
 
 .restarth1:hover {
-    color: chartreuse;
+    color: red;
 }
 
 

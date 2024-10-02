@@ -31,6 +31,7 @@ const Dino = () => {
 
 
     function strt() {
+        setInProgress(true)
         clearInterval(gameref.current)
         gameref.current = setInterval(() => {
             setObsRight((prev) => { return prev + 10 })
@@ -86,22 +87,20 @@ const Dino = () => {
         clearInterval(gameref.current)
 
         setInProgress(false)
-        setObsRight(200)
+        setObsRight(899)
     }
 
 
-    console.log(bbottom, obsbottom)
+    console.log(obsRight)
 
 
 
     return (
         <div className={styles.hero} >
-            <button onClick={strt} >start</button>
-
             <h1 className={styles.dinoh1}>press w to jump. score: {score}</h1>
 
             {
-                !inProgress && <h1 className={styles.restarth1} onClick={() => { strt(); setScore(0); setInProgress(true) }}>game over. restart?</h1>
+                !inProgress && <h1 className={styles.restarth1} onClick={() => { setObsRight(0); strt(); setScore(0); setInProgress(true) }}>game over. restart?</h1>
             }
 
             <div className={styles.dinosaur} style={{ right: `${bright}px`, bottom: `${bbottom}px` }}>
