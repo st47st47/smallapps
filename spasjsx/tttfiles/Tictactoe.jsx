@@ -1,177 +1,79 @@
+import React, { useEffect, useState } from 'react'
 import styles from '../../spscss/tictactoe.module.css'
-import { useEffect, useState } from "react"
+
+const winPatterns = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 7], [2, 4, 6]
+]
+
+const startarray = new Array(9).fill('').map((each) => { return { idee: Math.random(), content: each } })
 
 
+const Tictactoe = () => {
+    const [winnerFound, setWinnerFound] = useState(false)
 
-function Tictactoefinal() {
-    const [board, setBoard] = useState(['', '', '', '', '', '', '', '', ''])
-    const [player, setPlayer] = useState('O')
-    const [result, setResult] = useState({ winner: "none", state: "none" })
+    const [ponesturn, setPonesturn] = useState(true)
 
-    useEffect(() => {
-        checkWin()
-        checkIfTie()
+    const [myarr, setMyarr] = useState(startarray)
 
-        if (player == "X") {
-            setPlayer("O")
-        } else {
-            setPlayer("X")
-        }
-    }, [board])
+    function clk(arg) {
+        if (winnerFound) { return }
 
-    useEffect(() => {
-        if (result.state != 'none') {
-            alert(`game over. winning player: ${result.winner}`)
-            restartGame()
-        }
-    }, [result])
+        if (myarr.find((each) => { return each.idee == arg }).content != '') { alert('this spot is full') }
 
-    const chooseSquare = (square) => {
-        setBoard(
-            board.map((val, idx) => {
-                if (idx == square && val == '') {
-                    return player
-                }
-                return val
-            }))
-    }
-
-    const checkWin = () => {
-        Patterns.forEach((currPattern) => {
-            const firstPlayer = board[currPattern[0]]
-            if (firstPlayer == '') return;
-            let foundWinningPattern = true
-            currPattern.forEach((idx) => {
-                if (board[idx] != firstPlayer) {
-                    foundWinningPattern = false
-                }
+        else {
+            setMyarr((prev) => {
+                return prev.map((each) => {
+                    return each.idee == arg ? { ...each, content: ponesturn ? 'x' : 'o' } : each
+                })
             })
-            if (foundWinningPattern) {
-                setResult({ winner: player, state: "won" })
-            }
-        })
-    }
-
-    const checkIfTie = () => {
-        let filled = true
-        board.forEach((square) => {
-            if (square == '') {
-                filled = false
-            }
-        })
-        if (filled) {
-            setResult({ winner: "no winner", state: 'tie' })
+            setPonesturn((prev) => { return !prev })
         }
+
     }
 
-    const restartGame = () => {
-        setBoard(['', '', '', '', '', '', '', '', ''])
-        setPlayer("O")
-    }
+
+    useEffect(() => {
+
+
+        if (
+            winPatterns.some((each) => { return each.every((each) => { return myarr[each].content == 'x' }) })
+            ||
+            winPatterns.some((each) => { return each.every((each) => { return myarr[each].content == 'o' }) })
+        ) {
+            alert(`${ponesturn ? 'o' : 'x'} won`)
+
+            setWinnerFound(true)
+        }
+
+
+        if (
+            myarr.every((each) => { return each.content !== '' })
+        ) {
+            alert('game tied')
+            setMyarr(startarray)
+        }
+
+    }, [myarr])
+
+
+
+
 
     return (
         <div className={styles.hero}>
-            <div className={styles.board}>
-                <div className={styles.row}>
-                    <Square val={board[0]} chooseSquare={() => { chooseSquare(0) }} />
-                    <Square val={board[1]} chooseSquare={() => { chooseSquare(1) }} />
-                    <Square val={board[2]} chooseSquare={() => { chooseSquare(2) }} />
-                </div>
-                <div className={styles.row}>
-                    <Square val={board[3]} chooseSquare={() => { chooseSquare(3) }} />
-                    <Square val={board[4]} chooseSquare={() => { chooseSquare(4) }} />
-                    <Square val={board[5]} chooseSquare={() => { chooseSquare(5) }} />
-                </div>
-                <div className={styles.row}>
-                    <Square val={board[6]} chooseSquare={() => { chooseSquare(6) }} />
-                    <Square val={board[7]} chooseSquare={() => { chooseSquare(7) }} />
-                    <Square val={board[8]} chooseSquare={() => { chooseSquare(8) }} />
-                </div>
-
+            {winnerFound && <button onClick={() => { setMyarr(startarray); setWinnerFound(false); setPonesturn(true) }}>reset?</button>}
+            <div className={styles.mygrid}>
+                {
+                    myarr.map((each) => {
+                        return <div className={styles.boardsection} onClick={() => { clk(each.idee) }}>{each.content}</div>
+                    })
+                }
             </div>
-        </div>
-    );
-}
-
-export default Tictactoefinal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-import React from "react";
-
-function Square({ val, chooseSquare }) {
-    return (
-        <div className={styles.square} onClick={chooseSquare}>
-            {val}
         </div>
     )
 }
 
+export default Tictactoe
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-const Patterns = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-]
