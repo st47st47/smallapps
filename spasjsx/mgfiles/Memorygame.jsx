@@ -19,6 +19,7 @@ const Memorygame = () => {
 
     function anycrdclk(arg) {
 
+
         setCardsForScreen((prev) => {
             return prev.map((each) => {
                 return each.idee == arg.idee ? { ...each, status: true } : each
@@ -36,6 +37,9 @@ const Memorygame = () => {
             setFun(Math.random())
 
         }
+
+
+
     }
 
     useEffect(() => {
@@ -71,6 +75,9 @@ const Memorygame = () => {
     return (
         <div className="heromem">
             <h1 className='memscore'>score: {score}</h1>
+            {
+                score == 4 && <button onClick={() => { setScore(0); setCardsForScreen(contentready) }} className='rstbtn'>reset</button>
+            }
             <div className="memgrid">
 
                 {cardsForScreen.map((each) => {
