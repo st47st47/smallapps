@@ -12,6 +12,7 @@ import Tictactoe from '../spasjsx/tttfiles/Tictactoe'
 import Todos from '../spasjsx/tdfiles/Todos'
 import Weather from '../spasjsx/wtfiles/Weather'
 import Dino from '../spasjsx/dinofiles/Dino'
+import Wordle from '../spasjsx/wdlfiles/Wordle'
 
 
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='todos' element={<Todos />} />
           <Route path='weather' element={<Weather />} />
           <Route path='dino' element={<Dino />} />
+          <Route path='wordle' element={<Wordle />} />
         </Route >
       </Routes>
     </BrowserRouter>
