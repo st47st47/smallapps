@@ -1,0 +1,57 @@
+.hero {
+    width: 100vw;
+    height: 85vh;
+    background-color: #002D62;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.theCoin {
+    width: 30%;
+    /* height: 60%; */
+    /* border: 2px solid green; */
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.heads,
+.tails {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.24s linear;
+    backface-visibility: hidden;
+}
+
+.heads img,
+.tails img {
+    width: 100%;
+    height: 100%;
+}
+
+.heads {
+    transform: rotateY(0deg)
+}
+
+.tails {
+    transform: rotateY(180deg)
+}
+
+.tossButton {
+    width: 25%;
+    height: 10%;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+
+@media screen and (max-width:600px) {
+    .hero {
+        height: 100vh;
+    }
+}

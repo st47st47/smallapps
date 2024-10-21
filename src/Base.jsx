@@ -20,6 +20,7 @@ const Base = () => {
                 <NavLink to='dino'>dino</NavLink>
                 <NavLink to='wordle'>wordle</NavLink>
                 <NavLink to='tenzies'>tenzies</NavLink>
+                <NavLink to='toss'>coin toss</NavLink>
             </nav>
             <Outlet />
         </>
