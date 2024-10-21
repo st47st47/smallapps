@@ -19,6 +19,7 @@ const Base = () => {
                 <NavLink to='weather'>weather</NavLink>
                 <NavLink to='dino'>dino</NavLink>
                 <NavLink to='wordle'>wordle</NavLink>
+                <NavLink to='tenzies'>tenzies</NavLink>
             </nav>
             <Outlet />
         </>

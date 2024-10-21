@@ -1,0 +1,121 @@
+.hero {
+    font-family: 'Lucida Sans', 'Times New Roman';
+    width: 100vw;
+    height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #002D62;
+}
+
+.grid {
+    width: 40%;
+    height: 40%;
+    border: 2px solid lightgreen;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr)
+}
+
+.dice {
+    box-sizing: border-box;
+    margin: auto;
+    width: 60%;
+    height: 50%;
+    background-color: green;
+    font-size: 4em;
+    color: lightgreen;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px lightgreen;
+}
+
+/*  */
+
+.dlg {
+    margin: auto;
+    background-color: #002D62;
+    border: 2px solid lightgreen;
+}
+
+.dlg button {
+    border-radius: 50%;
+    border: 5px solid green;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.dlg h1 {
+    color: green;
+    font-size: x-large;
+}
+
+/*  */
+
+.rollButton {
+    width: 5%;
+    height: 8%;
+    background-color: #4169E1;
+    color: green;
+    font-size: 2em;
+    animation: change-background-color 3.8s ease-in-out infinite;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.rollButton:active {
+    transform: scale(0.8)
+}
+
+
+.lsh1s {
+    color: lightgreen;
+}
+
+/*  */
+
+@keyframes change-background-color {
+    16% {
+        background-color: #4169E1;
+    }
+
+    32% {
+        background-color: #87CEEB;
+
+    }
+
+    48% {
+        background-color: #98FB98;
+    }
+
+    64% {
+        background-color: lightsteelblue;
+    }
+
+    80% {
+        background-color: lightgreen;
+    }
+
+    96% {
+        background-color: lightseagreen;
+    }
+}
+
+/*  */
+
+@media screen and (max-width:600px) {
+    .rollButton {
+        width: 16%;
+        height: 12%;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+    .grid {
+        width: 70%
+    }
+}

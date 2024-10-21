@@ -13,6 +13,7 @@ import Todos from '../spasjsx/tdfiles/Todos'
 import Weather from '../spasjsx/wtfiles/Weather'
 import Dino from '../spasjsx/dinofiles/Dino'
 import Wordle from '../spasjsx/wdlfiles/Wordle'
+import Tenzies from '../spasjsx/tzfiles/Tenzies'
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='weather' element={<Weather />} />
           <Route path='dino' element={<Dino />} />
           <Route path='wordle' element={<Wordle />} />
+          <Route path='tenzies' element={<Tenzies />} />
         </Route >
       </Routes>
     </BrowserRouter>
